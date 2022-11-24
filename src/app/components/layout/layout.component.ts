@@ -7,10 +7,23 @@ import { LodgeService } from 'src/app/services/lodge.service';
   styleUrls: ['./layout.component.css'],
 })
 export class LayoutComponent {
-  constructor() {}
+  constructor(private lodgeService: LodgeService) {}
   listLodges: any;
+  now = new Date().toISOString().split('T')[0].toString();
+
   ngOnInit(): void {
-    console.log('hello !!');
+    this.getAllLodges();
+    console.log(this.now);
   }
-  getAllLodges() {}
+  getAllLodges() {
+    this.lodgeService.getAllLodges().subscribe((res: any) => {
+      this.listLodges = res['data'].filter((element: any) => {
+        return (
+          element.confirmed == true &&
+          Date.parse(element.datefin) >= Date.parse(this.now)
+        );
+      });
+      console.log('listLodges:', this.listLodges);
+    });
+  }
 }
