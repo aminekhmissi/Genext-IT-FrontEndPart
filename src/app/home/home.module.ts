@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { LayoutComponent } from '../components/layout/layout.component';
 import { HeaderComponent } from '../components/header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,6 @@ import { HeaderComponent } from '../components/header/header.component';
     HeaderComponent,
     LayoutComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule],
+  imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule, FormsModule],
 })
 export class HomeModule {}

@@ -244,9 +244,9 @@
                     class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all"
                   >
                     <a
-                      href="service.html"
+                      routerLink="/login"
                       class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-t-[12px]"
-                      >Service</a
+                      >Login</a
                     >
                   </li>
 
@@ -257,25 +257,6 @@
                       href="single-service.html"
                       class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px]"
                       >single service</a
-                    >
-                  </li>
-
-                  <li
-                    class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all"
-                  >
-                    <a
-                      href="login.html"
-                      class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px]"
-                      >login</a
-                    >
-                  </li>
-                  <li
-                    class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all"
-                  >
-                    <a
-                      href="register.html"
-                      class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-b-[12px]"
-                      >register</a
                     >
                   </li>
                 </ul>
@@ -401,22 +382,24 @@
               <li class="sm:mr-5 xl:mr-[20px] relative group">
                 <a href="#">
                   <img
-                    src="assets/images/user/avater.png"
+                    src="http://localhost:35000/getfile/{{
+                      userconnect.picture
+                    }}"
                     loading="lazy"
                     width="62"
                     height="62"
-                    alt="avater"
                   />
                 </a>
 
                 <ul
+                  *ngIf="!userconnect; else a"
                   class="list-none bg-white drop-shadow-[0px_6px_10px_rgba(0,0,0,0.2)] rounded-[12px] flex flex-wrap flex-col w-[180px] absolute top-[120%] sm:left-1/2 sm:-translate-x-1/2 transition-all group-hover:top-[60px] invisible group-hover:visible opacity-0 group-hover:opacity-100 right-0"
                 >
                   <li
                     class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all"
                   >
                     <a
-                      href="login.html"
+                      routerLink="login"
                       class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-t-[12px]"
                       >login</a
                     >
@@ -426,7 +409,7 @@
                     class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all"
                   >
                     <a
-                      href="register.html"
+                      routerLink="register"
                       class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-b-[12px]"
                       >register</a
                     >
@@ -465,3 +448,19 @@
     </div>
   </div>
 </header>
+
+<ng-template #a>
+  <ul
+    class="list-none bg-white drop-shadow-[0px_6px_10px_rgba(0,0,0,0.2)] rounded-[12px] flex flex-wrap flex-col w-[180px] absolute top-[120%] sm:left-1/2 sm:-translate-x-1/2 transition-all group-hover:top-[60px] invisible group-hover:visible opacity-0 group-hover:opacity-100 right-0"
+  >
+    <li
+      class="border-b border-dashed border-primary border-opacity-40 last:border-b-0 hover:border-solid transition-all"
+    >
+      <a
+        (click)="logout()"
+        class="font-lora leading-[1.571] text-[14px] text-primary p-[10px] capitalize block transition-all hover:bg-secondary hover:text-white text-center my-[-1px] rounded-t-[12px]"
+        >logout</a
+      >
+    </li>
+  </ul>
+</ng-template>
