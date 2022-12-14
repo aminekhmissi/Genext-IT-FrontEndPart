@@ -1,0 +1,19 @@
+<!-- modal -->
+<div id="overlay" (click)="modalService.showModal = false"></div>
+<div id="container">
+  <div id="header">Reserve Property:</div>
+  <div id="content">
+    <!-- are you sure that you want to delete that -->
+    <article class="calendar-wrapper">
+      <igx-calendar
+        #calendar
+        weekstart="1"
+        [selection]="'range'"
+      ></igx-calendar>
+    </article>
+  </div>
+  <div id="actions">
+    <button class="button-modal">yes</button>
+    <button class="cancel" (click)="modalService.showModal = false">No</button>
+  </div>
+</div>

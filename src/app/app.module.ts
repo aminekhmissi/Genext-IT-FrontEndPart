@@ -6,6 +6,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { HammerModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IgxCalendarModule } from 'igniteui-angular';
+import { ReservationModalComponent } from './shared/reservation-modal/reservation-modal.component';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -14,6 +19,7 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -10,4 +10,13 @@ export class LodgeService {
   getAllLodges() {
     return this.http.get(`${environment.baseurl}lodge/lodges`);
   }
+  getLodgeById(id: any) {
+    return this.http.get(`${environment.baseurl}lodge/getById/${id}`);
+  }
+  addLodge(lodge: any) {
+    return this.http.post(`${environment.baseurl}lodge/addLodge`, lodge);
+  }
+  createAddress(address: any) {
+    return this.http.post(`${environment.baseurl}adress/Addadress`, address);
+  }
 }

@@ -1,0 +1,127 @@
+<section
+  class="bg-no-repeat bg-center bg-cover bg-[#FFF6F0] h-[350px] lg:h-[513px] flex flex-wrap items-center relative before:absolute before:inset-0 before:content-[''] before:bg-[#000000] before:opacity-[70%]"
+  style="background-image: url('assets/images/breadcrumb/bg-1.png')"
+>
+  <div class="container">
+    <div class="grid grid-cols-12">
+      <div class="col-span-12">
+        <div
+          class="max-w-[700px] mx-auto text-center text-white relative z-[1]"
+        >
+          <div class="mb-5">
+            <span class="text-base block">Address ADD</span>
+          </div>
+          <h1
+            class="font-lora text-[32px] sm:text-[50px] md:text-[68px] lg:text-[50px] leading-tight xl:text-2xl font-medium"
+          >
+            Add Address
+          </h1>
+
+          <p class="text-base mt-5 max-w-[500px] mx-auto text-center">
+            Huge number of propreties availabe here for buy and sell also you
+            can find here co-living property as you like
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="pt-[80px] lg:pt-[120px] add-properties-form-select">
+  <div class="container">
+    <form [formGroup]="form">
+      <div class="grid grid-cols-12 gap-x-[30px]">
+        <div class="col-span-12">
+          <label
+            class="mb-[20px] font-lora text-[20px] font-medium leading-none block text-primary"
+            for="Location"
+            >Location</label
+          >
+        </div>
+
+        <div class="mb-[45px] col-span-12 md:col-span-6">
+          <input
+            id="Location"
+            class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-[#1B2D40] border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px]"
+            type="text"
+            placeholder="City"
+            formControlName="city"
+            [ngClass]="{ 'is-invalid': submitted && f['city'].errors }"
+          />
+          <div *ngIf="submitted && f['city'].errors" class="invalid-feedback">
+            <div *ngIf="f['city'].errors['required']">city is required</div>
+          </div>
+        </div>
+
+        <div class="mb-[45px] col-span-12 md:col-span-6">
+          <input
+            class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-[#1B2D40] border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px]"
+            type="text"
+            placeholder="Town"
+            formControlName="town"
+            [ngClass]="{ 'is-invalid': submitted && f['town'].errors }"
+          />
+          <div *ngIf="submitted && f['town'].errors" class="invalid-feedback">
+            <div *ngIf="f['town'].errors['required']">town is required</div>
+          </div>
+        </div>
+
+        <div class="mb-[45px] col-span-12 md:col-span-6">
+          <input
+            class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-[#1B2D40] border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px]"
+            type="number"
+            placeholder="Postal Code"
+            formControlName="postalCode"
+            [ngClass]="{ 'is-invalid': submitted && f['postalCode'].errors }"
+          />
+          <div
+            *ngIf="submitted && f['postalCode'].errors"
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['postalCode'].errors['required']">
+              postalCode is required
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-[45px] col-span-12 md:col-span-6">
+          <input
+            class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-[#1B2D40] border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px]"
+            type="text"
+            placeholder="Latitude"
+            formControlName="at"
+            [ngClass]="{ 'is-invalid': submitted && f['at'].errors }"
+          />
+          <div *ngIf="submitted && f['at'].errors" class="invalid-feedback">
+            <div *ngIf="f['at'].errors['required']">Latitude is required</div>
+          </div>
+        </div>
+        <div class="mb-[45px] col-span-12 md:col-span-6">
+          <input
+            class="font-light w-full leading-[1.75] placeholder:opacity-100 placeholder:text-body border border-[#1B2D40] border-opacity-60 rounded-[8px] p-[15px] focus:border-secondary focus:border-opacity-60 focus:outline-none focus:drop-shadow-[0px_6px_15px_rgba(0,0,0,0.1)] h-[60px]"
+            type="text"
+            placeholder="longitude"
+            formControlName="lang"
+            [ngClass]="{ 'is-invalid': submitted && f['lang'].errors }"
+          />
+          <div *ngIf="submitted && f['lang'].errors" class="invalid-feedback">
+            <div *ngIf="f['lang'].errors['required']">
+              longitude is required
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-12 gap-x-[30px]">
+        <div class="mb-[45px] col-span-12">
+          <div class="mt-[50px] lg:mt-[80px]">
+            <button
+              (click)="createAddress()"
+              class="before:rounded-md before:block before:absolute before:left-auto before:right-0 before:inset-y-0 before:-z-[1] before:bg-secondary before:w-0 hover:before:w-full hover:before:left-0 hover:before:right-auto before:transition-all leading-none px-[40px] py-[15px] capitalize font-medium text-white text-[14px] xl:text-[16px] relative after:block after:absolute after:inset-0 after:-z-[2] after:bg-primary after:rounded-md after:transition-all"
+            >
+              Add Property
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

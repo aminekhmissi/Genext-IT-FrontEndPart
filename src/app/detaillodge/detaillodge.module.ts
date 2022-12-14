@@ -2,16 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DetaillodgeRoutingModule } from './detaillodge-routing.module';
-import { DetaillodgeComponent } from './detaillodge.component';
-
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [
-    DetaillodgeComponent
-  ],
-  imports: [
-    CommonModule,
-    DetaillodgeRoutingModule
-  ]
+  declarations: [],
+  imports: [CommonModule, DetaillodgeRoutingModule, FormsModule, SharedModule],
 })
-export class DetaillodgeModule { }
+export class DetaillodgeModule {}
