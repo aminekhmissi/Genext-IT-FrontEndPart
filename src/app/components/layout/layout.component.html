@@ -1676,15 +1676,13 @@
                 <div class="py-[20px] px-[20px] text-left">
                   <h3>
                     <a
-                      href="properties-details.html"
+                      [routerLink]="['/detaillodge', lodge._id]"
                       class="font-lora leading-tight text-[22px] xl:text-[26px] text-primary hover:text-secondary transition-all font-medium"
                       >{{ lodge.title }}</a
                     >
                   </h3>
                   <h4>
-                    <a
-                      href="properties-details.html"
-                      class="font-light text-[14px] leading-[1.75] underline"
+                    <a class="font-light text-[14px] leading-[1.75] underline"
                       >{{ lodge.adress.town }},{{ lodge.adress.city }},{{
                         lodge.place.name
                       }}</a

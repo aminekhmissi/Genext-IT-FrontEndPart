@@ -9,11 +9,12 @@
         #calendar
         weekstart="1"
         [selection]="'range'"
+        (selected)="onSelection($event)"
       ></igx-calendar>
     </article>
   </div>
   <div id="actions">
-    <button class="button-modal">yes</button>
+    <button class="button-modal" (click)="createReservation()">yes</button>
     <button class="cancel" (click)="modalService.showModal = false">No</button>
   </div>
 </div>

@@ -27,7 +27,8 @@ export class ListFavorisComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.favorisService.removeFavoris(lodge);
-        Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+        Swal.fire('Deleted!', 'Your favorite has been deleted.', 'success');
+        window.location.href = 'http://localhost:4200/';
       }
     });
   }
